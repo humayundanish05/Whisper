@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Whisper – Message from the Universe</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #6a1b9a;
+      font-size: 36px;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #7b1fa2;
+      color: white;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #4a148c;
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌙 Whisper – A Message from the Universe</h1>
+
+  <label for="mood">Choose your mood:</label><br>
+  <select id="mood">
+    <option value="happy">Happy</option>
+    <option value="sad">Sad</option>
+    <option value="anxious">Anxious</option>
+    <option value="hopeful">Hopeful</option>
+    <option value="lonely">Lonely</option>
+  </select><br>
+
+  <button onclick="showMessage()">Receive Whisper</button>
+
+  <div class="message" id="messageBox"></div>
+
+  <script>
+    const messages = {
+      happy: [
+        "Your smile is a spell the world needs.",
+        "Joy flows through you like sunlight through leaves.",
+        "Happiness shared becomes magic multiplied.",
+        "Even the stars envy your glow today.",
+        "Let your laughter ripple through the universe."
+      ],
+      sad: [
+        "It’s okay to be soft in a world that tries to make you hard.",
+        "The rain only falls to help things grow.",
+        "Your sadness is not weakness — it’s the root of deep strength.",
+        "Storms pass, and the sky always clears.",
+        "You are allowed to pause and heal."
+      ],
+      anxious: [
+        "Breathe. Right now, you are safe.",
+        "Let go of what you can’t control — the stars never worry.",
+        "Stillness is not emptiness — it's space to reset.",
+        "Your mind is a sky; let the clouds float by.",
+        "You are not your thoughts — you are the awareness behind them."
+      ],
+      hopeful: [
+        "Even in darkness, the seed remembers the sun.",
+        "Your hope is the spark that lights a thousand candles.",
+        "Keep going — the universe is opening doors you can’t see yet.",
+        "Each heartbeat is a drum of becoming.",
+        "Dreams are whispers from your future self."
+      ],
+      lonely: [
+        "The moon is always with you, even when the sky is empty.",
+        "You are never truly alone — the universe is holding you.",
+        "Your presence matters, even in silence.",
+        "Connection begins with compassion for yourself.",
+        "You are a galaxy in one soul — vast and full of stars."
+      ]
+    };
+
+    function showMessage() {
+      const mood = document.getElementById("mood").value;
+      const msgList = messages[mood];
+      const randomMsg = msgList[Math.floor(Math.random() * msgList.length)];
+      document.getElementById("messageBox").innerText = randomMsg;
+    }
+  </script>
+</body>
+</html>
